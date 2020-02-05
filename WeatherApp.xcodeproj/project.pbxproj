@@ -14,6 +14,9 @@
 		548CE05E234D33B600B5177D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548CE05C234D33B600B5177D /* LaunchScreen.storyboard */; };
 		548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548CE065234D33E600B5177D /* ZipCodeHelper.swift */; };
 		548CE068234D340700B5177D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548CE067234D340700B5177D /* Assets.xcassets */; };
+		63777F6523EA4F43003176CA /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6423EA4F43003176CA /* Weather.swift */; };
+		63777F6723EA4F52003176CA /* CityImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6623EA4F52003176CA /* CityImages.swift */; };
+		63777F6A23EA51B1003176CA /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6923EA51B1003176CA /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		548CE05F234D33B600B5177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		548CE065234D33E600B5177D /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
 		548CE067234D340700B5177D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63777F6423EA4F43003176CA /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = ../../../../Documents/Weather.swift; sourceTree = "<group>"; };
+		63777F6623EA4F52003176CA /* CityImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityImages.swift; path = ../../../../Documents/CityImages.swift; sourceTree = "<group>"; };
+		63777F6923EA51B1003176CA /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +48,9 @@
 		548CE045234D33B500B5177D = {
 			isa = PBXGroup;
 			children = (
+				63777F6323EA4F30003176CA /* Models */,
 				548CE050234D33B500B5177D /* WeatherApp */,
+				63777F6823EA5191003176CA /* Secrets */,
 				548CE04F234D33B500B5177D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +76,23 @@
 				548CE05F234D33B600B5177D /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		63777F6323EA4F30003176CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63777F6423EA4F43003176CA /* Weather.swift */,
+				63777F6623EA4F52003176CA /* CityImages.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		63777F6823EA5191003176CA /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				63777F6923EA51B1003176CA /* Secrets.swift */,
+			);
+			path = Secrets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +168,11 @@
 			files = (
 				548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */,
 				548CE056234D33B500B5177D /* ViewController.swift in Sources */,
+				63777F6A23EA51B1003176CA /* Secrets.swift in Sources */,
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
 				548CE054234D33B500B5177D /* SceneDelegate.swift in Sources */,
+				63777F6723EA4F52003176CA /* CityImages.swift in Sources */,
+				63777F6523EA4F43003176CA /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
