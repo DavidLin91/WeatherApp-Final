@@ -13,6 +13,7 @@
 		548CE05E234D33B600B5177D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548CE05C234D33B600B5177D /* LaunchScreen.storyboard */; };
 		548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548CE065234D33E600B5177D /* ZipCodeHelper.swift */; };
 		548CE068234D340700B5177D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548CE067234D340700B5177D /* Assets.xcassets */; };
+		632C333B23EB2B8C000453C1 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632C333A23EB2B8C000453C1 /* WeatherCell.swift */; };
 		63777F6523EA4F43003176CA /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6423EA4F43003176CA /* Weather.swift */; };
 		63777F6723EA4F52003176CA /* CityImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6623EA4F52003176CA /* CityImages.swift */; };
 		63777F6A23EA51B1003176CA /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6923EA51B1003176CA /* Secrets.swift */; };
@@ -34,6 +35,7 @@
 		548CE05F234D33B600B5177D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		548CE065234D33E600B5177D /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
 		548CE067234D340700B5177D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		632C333A23EB2B8C000453C1 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		63777F6423EA4F43003176CA /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = ../../../../Documents/Weather.swift; sourceTree = "<group>"; };
 		63777F6623EA4F52003176CA /* CityImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityImages.swift; path = ../../../../Documents/CityImages.swift; sourceTree = "<group>"; };
 		63777F6923EA51B1003176CA /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				548CE055234D33B500B5177D /* WeatherTabController.swift */,
 				63777F6D23EA541A003176CA /* WeatherVC.swift */,
 				63777F7023EA5478003176CA /* FavoritesVC.swift */,
+				632C333A23EB2B8C000453C1 /* WeatherCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				548CE056234D33B500B5177D /* WeatherTabController.swift in Sources */,
 				63777F6A23EA51B1003176CA /* Secrets.swift in Sources */,
 				63777F6E23EA541A003176CA /* WeatherVC.swift in Sources */,
+				632C333B23EB2B8C000453C1 /* WeatherCell.swift in Sources */,
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
 				63777F7323EA5520003176CA /* WeatherView.swift in Sources */,
 				63777F7D23EA62B4003176CA /* WeatherAPIClient.swift in Sources */,

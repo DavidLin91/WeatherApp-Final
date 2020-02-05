@@ -36,13 +36,20 @@ class WeatherView: UIView {
         return label
     }()
     
-    public var zipcodeTextField: UITextField = {
+    public lazy var zipcodeTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .white
+        textField.backgroundColor = .systemGray4
         textField.textAlignment = .center
-        textField.keyboardType = .numberPad
+        textField.keyboardType = .numbersAndPunctuation
         textField.placeholder = "zip code"
         return textField
+    }()
+    
+    private lazy var enterZipCodeLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = "Enter zip code"
+        return label
     }()
     
     
@@ -62,9 +69,11 @@ class WeatherView: UIView {
     private func commonInit() {
         setupCityLabelConstraints()
         setupCollectionViewConstraints()
+        setupTextFieldConstraints()
+        setupZipCodeLabel()
     }
     
-   
+    
     
     
     //CONSTRAINTS
@@ -93,10 +102,26 @@ class WeatherView: UIView {
     }
     
     private func setupTextFieldConstraints() {
+        addSubview(zipcodeTextField)
         
-    }()
+        zipcodeTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            zipcodeTextField.topAnchor.constraint(equalTo: weatherCollectionView.bottomAnchor, constant: 20),
+            zipcodeTextField.leadingAnchor.constraint(equalTo:leadingAnchor, constant: 150),
+            zipcodeTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -150)
+        ])
+    }
     
-    
+    private func setupZipCodeLabel() {
+        addSubview(enterZipCodeLabel)
+        
+        enterZipCodeLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            enterZipCodeLabel.topAnchor.constraint(equalTo: zipcodeTextField.bottomAnchor, constant: 10),
+            enterZipCodeLabel.leadingAnchor.constraint(equalTo:leadingAnchor, constant: 150),
+            enterZipCodeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -150)
+        ])
+    }
     
     
 }
