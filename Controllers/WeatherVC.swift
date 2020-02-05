@@ -10,10 +10,20 @@ import UIKit
 
 class WeatherVC: UIViewController {
 
-    private let weatherVC = WeatherView()
+    private let weatherView = WeatherView()
+    
+    private var weeklyForcast = [DailyForcast]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.weatherView.weatherCollectionView.reloadData()
+            }
+        }
+    }
+    
+    
     
     override func loadView() {
-        view = weatherVC
+        view = weatherView
     }
     
     override func viewDidLoad() {

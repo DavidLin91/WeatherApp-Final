@@ -9,14 +9,19 @@
 import UIKit
 
 class WeatherView: UIView {
-
-    private lazy var weatherCollectionView: UICollectionView = {
-        let collectionView = UICollectionView()
-        collectionView.backgroundColor = .systemGray4
+    
+    
+    //Fields
+    
+    public lazy var weatherCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemGray2
         return collectionView
     }()
     
-    private lazy var cityLabelTitle: UILabel = {
+    public lazy var cityLabelTitle: UILabel = {
         let cityLabel = UILabel()
         cityLabel.textAlignment = .center
         cityLabel.text = "Weather Forecast For City Name"
@@ -24,6 +29,24 @@ class WeatherView: UIView {
     }()
     
     
+    public lazy var summary: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .black
+        return label
+    }()
+    
+    public var zipcodeTextField: UITextField = {
+        let textField = UITextField()
+        textField.backgroundColor = .white
+        textField.textAlignment = .center
+        textField.keyboardType = .numberPad
+        textField.placeholder = "zip code"
+        return textField
+    }()
+    
+    
+    //INIT
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -41,6 +64,10 @@ class WeatherView: UIView {
         setupCollectionViewConstraints()
     }
     
+   
+    
+    
+    //CONSTRAINTS
     
     private func setupCityLabelConstraints() {
         addSubview(cityLabelTitle)
@@ -58,13 +85,16 @@ class WeatherView: UIView {
         weatherCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             weatherCollectionView.topAnchor.constraint(equalTo: cityLabelTitle.bottomAnchor, constant: 20),
-            weatherCollectionView.leadingAnchor.constraint(equalTo: cityLabelTitle.leadingAnchor, constant: 20),
-        weatherCollectionView.trailingAnchor.constraint(equalTo: cityLabelTitle.trailingAnchor, constant: 20)
-        
+            weatherCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            weatherCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            weatherCollectionView.heightAnchor.constraint(equalToConstant: 275)
+            
         ])
     }
     
-    
+    private func setupTextFieldConstraints() {
+        
+    }()
     
     
     
