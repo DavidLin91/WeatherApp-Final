@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,9 @@
 		63777F7123EA5478003176CA /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F7023EA5478003176CA /* FavoritesVC.swift */; };
 		63777F7323EA5520003176CA /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F7223EA5520003176CA /* WeatherView.swift */; };
 		63777F7523EA55C0003176CA /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63777F7423EA55C0003176CA /* Favorites.storyboard */; };
+		63777F7823EA620F003176CA /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 63777F7723EA620F003176CA /* ImageKit */; };
+		63777F7B23EA62A5003176CA /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F7A23EA62A5003176CA /* PhotosAPIClient.swift */; };
+		63777F7D23EA62B4003176CA /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F7C23EA62B4003176CA /* WeatherAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,8 @@
 		63777F7023EA5478003176CA /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		63777F7223EA5520003176CA /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		63777F7423EA55C0003176CA /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		63777F7A23EA62A5003176CA /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
+		63777F7C23EA62B4003176CA /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63777F7823EA620F003176CA /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				548CE050234D33B500B5177D /* WeatherApp */,
-				63777F6C23EA5310003176CA /* Network Helpers */,
+				63777F7923EA626C003176CA /* API Clients */,
+				63777F6C23EA5310003176CA /* Network Services */,
 				63777F6323EA4F30003176CA /* Models */,
 				63777F6B23EA526F003176CA /* Views */,
 				63777F6F23EA5426003176CA /* Controllers */,
@@ -110,12 +117,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		63777F6C23EA5310003176CA /* Network Helpers */ = {
+		63777F6C23EA5310003176CA /* Network Services */ = {
 			isa = PBXGroup;
 			children = (
 				548CE065234D33E600B5177D /* ZipCodeHelper.swift */,
 			);
-			path = "Network Helpers";
+			path = "Network Services";
 			sourceTree = "<group>";
 		};
 		63777F6F23EA5426003176CA /* Controllers */ = {
@@ -126,6 +133,15 @@
 				63777F7023EA5478003176CA /* FavoritesVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		63777F7923EA626C003176CA /* API Clients */ = {
+			isa = PBXGroup;
+			children = (
+				63777F7A23EA62A5003176CA /* PhotosAPIClient.swift */,
+				63777F7C23EA62B4003176CA /* WeatherAPIClient.swift */,
+			);
+			path = "API Clients";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +160,9 @@
 			dependencies = (
 			);
 			name = WeatherApp;
+			packageProductDependencies = (
+				63777F7723EA620F003176CA /* ImageKit */,
+			);
 			productName = WeatherApp;
 			productReference = 548CE04E234D33B500B5177D /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -172,6 +191,9 @@
 				Base,
 			);
 			mainGroup = 548CE045234D33B500B5177D;
+			packageReferences = (
+				63777F7623EA620F003176CA /* XCRemoteSwiftPackageReference "ImageKit" */,
+			);
 			productRefGroup = 548CE04F234D33B500B5177D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -205,8 +227,10 @@
 				63777F6E23EA541A003176CA /* WeatherVC.swift in Sources */,
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
 				63777F7323EA5520003176CA /* WeatherView.swift in Sources */,
+				63777F7D23EA62B4003176CA /* WeatherAPIClient.swift in Sources */,
 				63777F7123EA5478003176CA /* FavoritesVC.swift in Sources */,
 				548CE054234D33B500B5177D /* SceneDelegate.swift in Sources */,
+				63777F7B23EA62A5003176CA /* PhotosAPIClient.swift in Sources */,
 				63777F6723EA4F52003176CA /* CityImages.swift in Sources */,
 				63777F6523EA4F43003176CA /* Weather.swift in Sources */,
 			);
@@ -396,6 +420,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63777F7623EA620F003176CA /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/ImageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63777F7723EA620F003176CA /* ImageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63777F7623EA620F003176CA /* XCRemoteSwiftPackageReference "ImageKit" */;
+			productName = ImageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 548CE046234D33B500B5177D /* Project object */;
 }
