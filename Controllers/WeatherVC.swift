@@ -40,7 +40,7 @@ class WeatherVC: UIViewController {
         weatherView.weatherCollectionView.dataSource = self
         weatherView.weatherCollectionView.delegate = self
         weatherView.zipcodeTextField.delegate = self
-        getWeatherFromZipCode(zipcode: "10002")
+        getWeatherFromZipCode(zipcode: "11234")
         weatherView.weatherCollectionView.register(WeatherCell.self, forCellWithReuseIdentifier: "WeatherCell")
     }
     
@@ -52,6 +52,9 @@ class WeatherVC: UIViewController {
                 let lat = location.lat
                 let long = location.long
                 self?.getWeather(lat: lat, long: long)
+                DispatchQueue.main.async {
+                    self?.getPhotos(photo: location.placeName)
+                }
             case .failure(let error):
                 print(error)
             }
@@ -115,6 +118,15 @@ extension WeatherVC: UICollectionViewDelegateFlowLayout {
         let itemWidth: CGFloat = (maxWidth - totalSpacing)/numberOfItems
         return CGSize(width: itemWidth, height: itemWidth * 1.2)
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 
