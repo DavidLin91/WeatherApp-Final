@@ -17,6 +17,14 @@ class WeatherCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var weatherImage: UIImageView = {
+        let weatherImage = UIImageView()
+        weatherImage.contentMode = .scaleAspectFit
+        return weatherImage
+    }()
+    
+    
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -29,11 +37,13 @@ class WeatherCell: UICollectionViewCell {
     
     private func commonInit() {
         setupDateLabelConstraints()
+        setupImageConstraints()
     }
     
     
     public func updateUI(data: DailyForcast) {
-        dateLabel.text = String(data.time)
+        dateLabel.text = data.time.convertDate()
+        weatherImage.image = UIImage(named: data.icon)
     }
     
 
@@ -48,5 +58,40 @@ class WeatherCell: UICollectionViewCell {
         dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
         dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
+    }
+    
+    
+    public func setupImageConstraints() {
+        addSubview(weatherImage)
+        weatherImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            weatherImage.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 20),
+            dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5)
+        ])
+    }
+    
+    
+    
+}
+
+extension Double {
+    func convertDate() -> String {
+        let date = Date(timeIntervalSince1970: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.medium
+        dateFormatter.dateFormat = "MMMM dd, yyyy"
+        dateFormatter.timeZone = .current
+        let localDate = dateFormatter.string(from: date)
+        return localDate
+    }
+    func convertTime() -> String {
+        let date = Date(timeIntervalSince1970: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = DateFormatter.Style.medium
+        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.timeZone = .current
+        let localDate = dateFormatter.string(from: date)
+        return localDate
     }
 }

@@ -40,7 +40,8 @@ class WeatherVC: UIViewController {
         weatherView.weatherCollectionView.dataSource = self
         weatherView.weatherCollectionView.delegate = self
         weatherView.zipcodeTextField.delegate = self
-        getWeatherFromZipCode(zipcode: zipCode)
+        getWeatherFromZipCode(zipcode: "10002")
+        weatherView.weatherCollectionView.register(WeatherCell.self, forCellWithReuseIdentifier: "WeatherCell")
     }
     
     
