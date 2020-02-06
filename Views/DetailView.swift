@@ -11,26 +11,26 @@ import UIKit
 class DetailView: UIView {
     
     //Fields
-    private lazy var weatherLabel: UILabel = {
+    public lazy var weatherLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .black
         return label
     }()
     
-    private lazy var cityImage: UIImageView = {
+    public lazy var cityImage: UIImageView = {
         let cityImage = UIImageView()
         return cityImage
     }()
     
-    private lazy var highTempLabel: UILabel = {
+    public lazy var highTempLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .black
         return label
     }()
     
-    private lazy var lowTempLabel: UILabel = {
+    public lazy var lowTempLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .black
@@ -39,21 +39,21 @@ class DetailView: UIView {
     }()
     
     
-    private lazy var sunriseLabel: UILabel = {
+    public lazy var sunriseLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .black
         return label
     }()
     
-    private lazy var sunsetLabel: UILabel = {
+    public lazy var sunsetLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .black
         return label
     }()
     
-    private lazy var windSpeed: UILabel = {
+    public lazy var windSpeed: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .black
@@ -73,21 +73,31 @@ class DetailView: UIView {
     
     private func commonInit() {
         configureWeatherLabel()
+        configureCityImage()
     }
     
     private func configureWeatherLabel() {
         addSubview(weatherLabel)
         weatherLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            weatherLabel.topAnchor.constraint(equalTo: topAnchor, constant: 30),
+            weatherLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
             weatherLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             weatherLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
     }
     
     
-    
-    
-    
+    private func configureCityImage() {
+        addSubview(cityImage)
+        cityImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            cityImage.topAnchor.constraint(equalTo: weatherLabel.bottomAnchor, constant: 30),
+            cityImage.leadingAnchor.constraint(equalTo: leadingAnchor),
+            cityImage.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cityImage.heightAnchor.constraint(equalToConstant: 400.0)
+        
+        
+        ])
+    }
     
 }

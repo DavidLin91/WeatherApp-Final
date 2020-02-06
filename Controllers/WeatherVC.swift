@@ -119,12 +119,13 @@ extension WeatherVC: UICollectionViewDelegateFlowLayout {
         return CGSize(width: itemWidth, height: itemWidth * 1.2)
     }
     
-    
-    
-    
-    
-    
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let weatherDay = weeklyForcast[indexPath.row]
+        let dvc = DetailVC()
+        dvc.picture = cityImages[indexPath.row]
+        dvc.weather = weatherDay
+        navigationController?.pushViewController(dvc, animated: true)
+    }
     
     
 }
