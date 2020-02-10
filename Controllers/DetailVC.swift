@@ -8,11 +8,15 @@
 
 import UIKit
 import ImageKit
+import DataPersistence
 
 class DetailVC: UIViewController {
 
 private var detailView = DetailView()
     var picture: Photo?
+        
+    public var dataPersistence: DataPersistence<Photo>!
+    
     var weather: DailyForcast? 
     
     override func loadView() {
@@ -23,10 +27,17 @@ private var detailView = DetailView()
         super.viewDidLoad()
         updateUI()
         view.backgroundColor = .white
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(favoriteButtonPressed(_:)))
     }
     
     public func updateUI() {
         detailView.weatherLabel.text = weather?.summary
+        detailView.highTempLabel.text = "High Temp: \(weather?.temperatureHigh.description ?? "")"
+        detailView.lowTempLabel.text = "Low Temp: \(weather?.temperatureLow.description ?? "")"
+        detailView.sunriseLabel.text = "Sunrise: \(weather?.sunriseTime.description ?? "this")"
+        detailView.sunsetLabel.text = "Sunset: \(weather?.sunsetTime.description ?? "" )"
+        detailView.windSpeed.text = "Wind Speed: \(weather?.windSpeed.description ?? "")"
         detailView.cityImage.getImage(with: picture?.largeImageURL ?? "") { (result) in
             switch result {
             case .failure(let error):
@@ -39,7 +50,15 @@ private var detailView = DetailView()
         }
     }
     
-    
+    @objc func favoriteButtonPressed(_ sender: UIBarButtonItem){
+           guard let picture = picture else { return }
+           do {
+               // saves to document directory
+               try dataPersistence.createItem(picture)
+           } catch {
+               print("error saving article \(error)")
+           }
+       }
     
     
  

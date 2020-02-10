@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import DataPersistence
 
 class WeatherVC: UIViewController {
     
     private let weatherView = WeatherView()
     public var cityImages = [Photo]()
+    
+    public var dataPersistence: DataPersistence<Photo>!
+    
     
     private var weeklyForcast = [DailyForcast]() {
         didSet {
@@ -22,7 +26,7 @@ class WeatherVC: UIViewController {
     }
     
     
-    private var zipCode = String() {
+    private var zipCode = "10013" {
         didSet {
             getWeatherFromZipCode(zipcode: zipCode)
             
@@ -40,7 +44,7 @@ class WeatherVC: UIViewController {
         weatherView.weatherCollectionView.dataSource = self
         weatherView.weatherCollectionView.delegate = self
         weatherView.zipcodeTextField.delegate = self
-        getWeatherFromZipCode(zipcode: "11234")
+        getWeatherFromZipCode(zipcode: zipCode)
         weatherView.weatherCollectionView.register(WeatherCell.self, forCellWithReuseIdentifier: "WeatherCell")
     }
     
@@ -124,6 +128,9 @@ extension WeatherVC: UICollectionViewDelegateFlowLayout {
         let dvc = DetailVC()
         dvc.picture = cityImages[indexPath.row]
         dvc.weather = weatherDay
+        
+        dvc.dataPersistence = dataPersistence
+        
         navigationController?.pushViewController(dvc, animated: true)
     }
     

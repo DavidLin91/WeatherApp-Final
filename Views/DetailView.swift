@@ -74,6 +74,10 @@ class DetailView: UIView {
     private func commonInit() {
         configureWeatherLabel()
         configureCityImage()
+        configureHighTemp()
+        configureLowTemp()
+        configureSunriseLabel()
+        configureSunsetLabel()
     }
     
     private func configureWeatherLabel() {
@@ -99,5 +103,57 @@ class DetailView: UIView {
         
         ])
     }
+    
+    
+    private func configureHighTemp() {
+           addSubview(highTempLabel)
+           highTempLabel.translatesAutoresizingMaskIntoConstraints = false
+           NSLayoutConstraint.activate([
+               highTempLabel.topAnchor.constraint(equalTo: cityImage.bottomAnchor, constant: 30),
+               highTempLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+               highTempLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+           ])
+       }
+    
+    private func configureLowTemp() {
+        addSubview(lowTempLabel)
+        lowTempLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            lowTempLabel.topAnchor.constraint(equalTo: highTempLabel.bottomAnchor, constant: 10),
+            lowTempLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            lowTempLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    private func configureSunriseLabel() {
+        addSubview(sunriseLabel)
+        sunriseLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            sunriseLabel.topAnchor.constraint(equalTo: lowTempLabel.bottomAnchor, constant: 10),
+            sunriseLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            sunriseLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    private func configureSunsetLabel() {
+        addSubview(sunsetLabel)
+        sunsetLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            sunsetLabel.topAnchor.constraint(equalTo: sunriseLabel.bottomAnchor, constant: 10),
+            sunsetLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            sunsetLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+    }
+    
+    private func configureWindSpeed() {
+           addSubview(windSpeed)
+           windSpeed.translatesAutoresizingMaskIntoConstraints = false
+           NSLayoutConstraint.activate([
+               windSpeed.topAnchor.constraint(equalTo: sunsetLabel.bottomAnchor, constant: 10),
+               windSpeed.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+               windSpeed.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+           ])
+       }
+    
     
 }

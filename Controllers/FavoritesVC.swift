@@ -7,24 +7,44 @@
 //
 
 import UIKit
+import DataPersistence
 
 class FavoritesVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    public var dataPersistence: DataPersistence<Photo>!
+    
+    
+    private var savedArticles = [Photo]() {
+        didSet {
+            print("there are \(savedArticles.count) articles")
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
+    
+    
+    private func fetchSavedArticles() {
+        do {
+            savedArticles = try dataPersistence.loadItems()
+        } catch {
+            print("error fetching articles")
+        }
+    }
+}
 
+
+extension FavoritesVC: DataPersistenceDelegate {
+    func didSaveItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        print("item was saved")
+    }
+    
+    func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
+        print("item was deleted")
+    }
+    
+    
 }

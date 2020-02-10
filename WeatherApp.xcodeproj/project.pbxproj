@@ -26,6 +26,7 @@
 		63777F7823EA620F003176CA /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 63777F7723EA620F003176CA /* ImageKit */; };
 		63777F7B23EA62A5003176CA /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F7A23EA62A5003176CA /* PhotosAPIClient.swift */; };
 		63777F7D23EA62B4003176CA /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F7C23EA62B4003176CA /* WeatherAPIClient.swift */; };
+		63C2B56A23F11ABD009BC76F /* weatherdvc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C2B56923F11ABD009BC76F /* weatherdvc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		63777F7423EA55C0003176CA /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		63777F7A23EA62A5003176CA /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
 		63777F7C23EA62B4003176CA /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
+		63C2B56923F11ABD009BC76F /* weatherdvc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherdvc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				63777F7223EA5520003176CA /* WeatherView.swift */,
 				632555E723ECAEBE003FB002 /* DetailView.swift */,
 				63777F7423EA55C0003176CA /* Favorites.storyboard */,
+				63C2B56923F11ABD009BC76F /* weatherdvc.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
 				63777F7323EA5520003176CA /* WeatherView.swift in Sources */,
 				63777F7D23EA62B4003176CA /* WeatherAPIClient.swift in Sources */,
+				63C2B56A23F11ABD009BC76F /* weatherdvc.swift in Sources */,
 				63777F7123EA5478003176CA /* FavoritesVC.swift in Sources */,
 				548CE054234D33B500B5177D /* SceneDelegate.swift in Sources */,
 				63777F7B23EA62A5003176CA /* PhotosAPIClient.swift in Sources */,

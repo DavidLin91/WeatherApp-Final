@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import DataPersistence
 
 class WeatherTabController: UITabBarController {
+    
+    
+    private var dataPersistence = DataPersistence<Photo>(filename: "savedPhoto.plist")
     
     private lazy var weatherVC: WeatherVC = {
         let viewcontroller = WeatherVC()
         viewcontroller.tabBarItem = UITabBarItem(title: "Weather", image: UIImage(systemName: "cloud"), tag: 0)
+        viewcontroller.dataPersistence = dataPersistence
         return viewcontroller
     }()
     
@@ -22,6 +27,7 @@ class WeatherTabController: UITabBarController {
             fatalError("could not load FavoritesVC")
         }
         viewcontroller.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(systemName: "heart"), tag: 1)
+        viewcontroller.dataPersistence = dataPersistence
         return viewcontroller
     }()
 
