@@ -10,11 +10,16 @@ import UIKit
 import ImageKit
 import DataPersistence
 
+protocol Delegate: AnyObject {
+    func didAddToFaves(photo: Photo)
+}
+
 class DetailVC: UIViewController {
 
 private var detailView = DetailView()
     var picture: Photo?
         
+    weak var delegate: Delegate?
     public var dataPersistence: DataPersistence<Photo>!
     
     var weather: DailyForecast? 
@@ -52,6 +57,8 @@ private var detailView = DetailView()
     
     @objc func favoriteButtonPressed(_ sender: UIBarButtonItem){
            guard let picture = picture else { return }
+        let favoritedPic = Photo(largeImageURL: picture.largeImageURL)
+        delegate?.didAddToFaves(photo: favoritedPic)
            do {
                // saves to document directory
                try dataPersistence.createItem(picture)

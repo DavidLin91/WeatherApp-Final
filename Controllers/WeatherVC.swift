@@ -26,7 +26,7 @@ class WeatherVC: UIViewController {
     }
     
     
-    private var zipCode = "10013" {
+    private var zipCode = String() {
         didSet {
             getWeatherFromZipCode(zipcode: zipCode)
             
@@ -58,6 +58,7 @@ class WeatherVC: UIViewController {
                 self?.getWeather(lat: lat, long: long)
                 DispatchQueue.main.async {
                     self?.getPhotos(photo: location.placeName)
+                    self?.weatherView.cityLabelTitle.text = location.placeName
                 }
             case .failure(let error):
                 print(error)
@@ -86,7 +87,7 @@ class WeatherVC: UIViewController {
         PhotosAPIClient.getPhotos(for: photo) { [weak self] (result) in
             switch result {
             case .failure(let appError):
-                print("api client error: \(appError)")
+                print(" error: \(appError)")
             case .success(let photos):
                 self?.cityImages = photos
             }

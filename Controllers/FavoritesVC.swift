@@ -10,13 +10,16 @@ import UIKit
 import DataPersistence
 
 class FavoritesVC: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
     
     public var dataPersistence: DataPersistence<Photo>!
     
     
-    private var savedArticles = [Photo]() {
+    private var favoritedPics = [Photo]() {
         didSet {
-            print("there are \(savedArticles.count) articles")
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
     
@@ -24,12 +27,15 @@ class FavoritesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        fetchSavedArticles()
     }
     
     
     private func fetchSavedArticles() {
         do {
-            savedArticles = try dataPersistence.loadItems()
+            favoritedPics = try dataPersistence.loadItems()
         } catch {
             print("error fetching articles")
         }
@@ -37,14 +43,30 @@ class FavoritesVC: UIViewController {
 }
 
 
-extension FavoritesVC: DataPersistenceDelegate {
-    func didSaveItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
-        print("item was saved")
+extension FavoritesVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        favoritedPics.count
     }
     
-    func didDeleteItem<T>(_ persistenceHelper: DataPersistence<T>, item: T) where T : Decodable, T : Encodable, T : Equatable {
-        print("item was deleted")
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "favoriteCell", for: indexPath) as? FavoriteCell else {
+            fatalError()
+        }
+        let favorite = favoritedPics[indexPath.row]
+        cell.congigureCell(for: favorite)
+        return cell
     }
+}
+
+
+extension FavoritesVC: UICollectionViewDelegateFlowLayout {
     
-    
+}
+
+
+
+extension FavoritesVC: Delegate {
+    func didAddToFaves(photo: Photo) {
+        favoritedPics.append(photo)
+    }
 }
