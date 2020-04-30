@@ -17,7 +17,7 @@ class WeatherVC: UIViewController {
     public var dataPersistence: DataPersistence<Photo>!
     
     
-    private var weeklyForcast = [DailyForcast]() {
+    private var weeklyForcast = [DailyForecast]() {
         didSet {
             DispatchQueue.main.async {
                 self.weatherView.weatherCollectionView.reloadData()

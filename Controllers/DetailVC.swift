@@ -17,7 +17,7 @@ private var detailView = DetailView()
         
     public var dataPersistence: DataPersistence<Photo>!
     
-    var weather: DailyForcast? 
+    var weather: DailyForecast? 
     
     override func loadView() {
         view = detailView

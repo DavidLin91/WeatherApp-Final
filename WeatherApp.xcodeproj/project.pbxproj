@@ -16,8 +16,8 @@
 		632555E623ECAE23003FB002 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632555E523ECAE23003FB002 /* DetailVC.swift */; };
 		632555E823ECAEBE003FB002 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632555E723ECAEBE003FB002 /* DetailView.swift */; };
 		632C333B23EB2B8C000453C1 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632C333A23EB2B8C000453C1 /* WeatherCell.swift */; };
-		63777F6523EA4F43003176CA /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6423EA4F43003176CA /* Weather.swift */; };
-		63777F6723EA4F52003176CA /* CityImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6623EA4F52003176CA /* CityImages.swift */; };
+		6342019B245B183E0021D7C1 /* CityImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6342019A245B183E0021D7C1 /* CityImages.swift */; };
+		6342019D245B18B70021D7C1 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6342019C245B18B70021D7C1 /* Weather.swift */; };
 		63777F6A23EA51B1003176CA /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6923EA51B1003176CA /* Secrets.swift */; };
 		63777F6E23EA541A003176CA /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F6D23EA541A003176CA /* WeatherVC.swift */; };
 		63777F7123EA5478003176CA /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777F7023EA5478003176CA /* FavoritesVC.swift */; };
@@ -40,8 +40,8 @@
 		632555E523ECAE23003FB002 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		632555E723ECAEBE003FB002 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		632C333A23EB2B8C000453C1 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
-		63777F6423EA4F43003176CA /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = ../../../../Documents/Weather.swift; sourceTree = "<group>"; };
-		63777F6623EA4F52003176CA /* CityImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CityImages.swift; path = ../../../../Documents/CityImages.swift; sourceTree = "<group>"; };
+		6342019A245B183E0021D7C1 /* CityImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImages.swift; sourceTree = "<group>"; };
+		6342019C245B18B70021D7C1 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		63777F6923EA51B1003176CA /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		63777F6D23EA541A003176CA /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		63777F7023EA5478003176CA /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 		63777F6323EA4F30003176CA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				63777F6423EA4F43003176CA /* Weather.swift */,
-				63777F6623EA4F52003176CA /* CityImages.swift */,
+				6342019A245B183E0021D7C1 /* CityImages.swift */,
+				6342019C245B18B70021D7C1 /* Weather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +234,7 @@
 				548CE056234D33B500B5177D /* WeatherTabController.swift in Sources */,
 				63777F6A23EA51B1003176CA /* Secrets.swift in Sources */,
 				63777F6E23EA541A003176CA /* WeatherVC.swift in Sources */,
+				6342019D245B18B70021D7C1 /* Weather.swift in Sources */,
 				632C333B23EB2B8C000453C1 /* WeatherCell.swift in Sources */,
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
 				63777F7323EA5520003176CA /* WeatherView.swift in Sources */,
@@ -241,8 +242,7 @@
 				63777F7123EA5478003176CA /* FavoritesVC.swift in Sources */,
 				548CE054234D33B500B5177D /* SceneDelegate.swift in Sources */,
 				63777F7B23EA62A5003176CA /* PhotosAPIClient.swift in Sources */,
-				63777F6723EA4F52003176CA /* CityImages.swift in Sources */,
-				63777F6523EA4F43003176CA /* Weather.swift in Sources */,
+				6342019B245B183E0021D7C1 /* CityImages.swift in Sources */,
 				632555E823ECAEBE003FB002 /* DetailView.swift in Sources */,
 				632555E623ECAE23003FB002 /* DetailVC.swift in Sources */,
 			);

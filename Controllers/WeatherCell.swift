@@ -59,7 +59,7 @@ class WeatherCell: UICollectionViewCell {
     }
     
     
-    public func updateUI(data: DailyForcast) {
+    public func updateUI(data: DailyForecast) {
         dateLabel.text = data.time.convertDate()
         weatherImage.image = UIImage(named: data.icon)
         highTempLabel.text = "High Temp: \(data.temperatureHigh.description)"
